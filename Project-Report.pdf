@@ -1,0 +1,63 @@
+Skin Cancer Detection using Deep Learning (ResNet50 & EfficientNetB0)
+
+
+Author
+  Mayank Singh
+  MCA – Central University of Himachal Pradesh
+
+
+Objective
+  To develop a deep learning model that classifies dermoscopic skin lesion images into multiple categories using transfer learning with ResNet50 and EfficientNetB0 architectures.
+
+
+Dataset
+  Source: Kaggle - Melanoma Skin Cancer Dataset
+  Classes: 3 (e.g., Melanoma, Nevus, Seborrheic Keratosis)
+  Total Images: ~17,800+
+  Data Augmentation: Rotation, Zoom, Flip, Shift, etc.
+  Split: 80% training, 20% validation
+
+
+Technologies Used
+  Python
+  Google Colab
+  TensorFlow / Keras
+  Matplotlib / Seaborn / Sklearn
+  Kaggle API for dataset fetching
+
+
+Models Used
+  1.ResNet50
+      Layers frozen: first 100
+      Dense + ELU + Dropout + BatchNorm
+  2.EfficientNetB0
+      Half layers frozen
+      Dense + ELU + Dropout + BatchNorm
+
+
+Training Details
+  Image Size: 224 × 224
+  Batch Size: 32
+  Optimizer: Adam / AdamW
+  Loss Function: Categorical Crossentropy
+  Callbacks: EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
+  Epochs: Up to 20
+
+
+Results
+  Model	                        Validation Accuracy
+  ResNet50	                        ~20%
+  EfficientNetB0	                  ~60%
+
+  EfficientNetB0 outperformed ResNet50 in validation accuracy.
+  Classification reports and confusion matrices show EfficientNetB0 correctly predicted most of the dominant class.
+
+
+Evaluation Metrics
+  Accuracy
+  Confusion Matrix
+  Precision, Recall, F1-score
+
+
+Conclusion
+  EfficientNetB0 is more effective for skin cancer detection in this case. With better hyperparameter tuning and class balancing, results can improve further.
